@@ -39,13 +39,13 @@
 
     <script>
         function loadFile(filename) {
-            fetch('https://cors-anywhere.herokuapp.com/' + window.location.origin + '/' + filename)
+            fetch(filename)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('code-block').textContent = data;
                 })
                 .catch(error => {
-                    document.getElementById('code-block').textContent = 'Error loading file: ' + error.message;
+                    document.getElementById('code-block').textContent = 'Error loading file: ' + error;
                 });
         }
         
