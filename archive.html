@@ -5,43 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WilliamJokus - C++ Project Viewer</title>
     <link rel="stylesheet" href="style1.css">
-    <style>
-        .container {
-            display: grid;
-            grid-template-columns: 20% 80%;
-            height: 100vh;
-            gap: 10px;
-        }
-        .sidebar {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-right: 1px solid #ccc;
-        }
-        .sidebar a {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #ccc;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .sidebar a:hover {
-            background-color: #999;
-        }
-        .main-content {
-            padding: 100px 20px 20px;
-        }
-        pre {
-            background-color: #eee;
-            padding: 20px;
-            border-radius: 5px;
-            font-family: monospace;
-            white-space: pre-wrap; /* Wrap long lines */
-            overflow-x: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css">
+    
+    
 </head>
 <body>
 
@@ -58,9 +24,11 @@
     <div class="container">
         <div class="sidebar">
             <h2>Select C++ File</h2>
-            <a href="#" onclick="loadFile('1527A.cpp')">File 1</a>
-            <a href="#" onclick="loadFile('1343C.cpp')">File 2</a>
-            <a href="#" onclick="loadFile('1345B.cpp')">File 3</a>
+            <a href="#" onclick="loadFile('idek/1703A.cpp')">File 3</a>
+            <a href="#" onclick="loadFile('idek/1703B.cpp')">File 3</a>
+            <a href="#" onclick="loadFile('idek/1703C.cpp')">File 3</a>
+            <a href="#" onclick="loadFile('idek/1703D.cpp')">File 3</a>
+
         </div>
 
         <div class="main-content">
@@ -71,13 +39,8 @@
 
     <script>
         function loadFile(filename) {
-            fetch(filename)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
+            fetch('https://cors-anywhere.herokuapp.com/' + window.location.origin + '/' + filename)
+                .then(response => response.text())
                 .then(data => {
                     document.getElementById('code-block').textContent = data;
                 })
@@ -85,6 +48,7 @@
                     document.getElementById('code-block').textContent = 'Error loading file: ' + error.message;
                 });
         }
+        
         
     </script>
 
