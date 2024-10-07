@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+header {
+    background-color: transparent; /* Remove background color */
+    color: #333; /* Change text color to a darker tone */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em; /* Smaller title font size */
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: #ccc; /* Light gray background for buttons */
+    color: #333; /* Darker text color for better contrast */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #999; /* Darker gray on hover */
+}
+
+.content {
+    padding-top: 150px; /* Space to push content below the header */
+    text-align: center;
+}
+.main-content {
+    padding: 100px 20px 20px; /* Add top padding of 100px to avoid overlap with buttons */
+}
+
